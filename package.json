@@ -12,5 +12,9 @@
   "bin": {
     "ramlparser": "raml-parser.js"
   },
-  "preferGlobal": true
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hadesbox/simple-ramlparser.git"
+  }
 }
