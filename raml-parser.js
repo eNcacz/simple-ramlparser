@@ -20,7 +20,15 @@ else{
     raml.loadRAML(input_file,[], {rejectOnErrors: true}).then(function(data) {
         console.log("your RAML file is correct!")
     }, function(error) {
-        console.error("Errors found:\n", error.parserErrors);
+        console.error("Errors found:");
+        error.parserErrors.forEach(function(item){
+            if(item.range.start.line == item.range.end.line){
+              line = item.range.start.line;
+            } else {
+              line = `${item.range.start.line}-${item.range.end.line}`;
+            }
+            console.error(`${item.isWarning ? "Warning" : "Error"}: ${item.path}(line ${line} column ${item.range.start.column}-${item.range.end.column} position ${item.range.start.position}-${item.range.end.position}): ${item.code} - ${item.message}`);
+        });
         process.exit(1);
     });
 }
