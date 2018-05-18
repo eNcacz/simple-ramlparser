@@ -3,9 +3,11 @@ Simple-CLI-ramlparser
 
 A simple implementation of a raml parser with the raml-js library.
 
-To install it simply run 
+It is derived from [hadesbox/simple-ramlparser](https://github.com/hadesbox/simple-ramlparser). Leveris specific features added.
+
+To install it simply run
 ```
-  $ sudo npm install -g 
+  $ sudo npm install -g
 ```
 this will fetch all packages (npm install), and create the executable to your PATH (ramlparser). Then you can globally call the parser like this
 
